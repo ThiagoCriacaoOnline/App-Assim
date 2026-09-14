@@ -37,3 +37,7 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# Chaves e credenciais do Firebase / Google Cloud
+*.json
+auth/firebase/*.json

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>809610368030-40na2jtaqg89hk52cae8i6gqmutr4240.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.809610368030-40na2jtaqg89hk52cae8i6gqmutr4240</string>
+	<key>API_KEY</key>
+	<string>AIzaSyATXsL-srcBylcMyJ_UIOFngCRmFSOjzf8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>809610368030</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.g10web.AssimConceptV1</string>
+	<key>PROJECT_ID</key>
+	<string>assim-app-beneficiario</string>
+	<key>STORAGE_BUCKET</key>
+	<string>assim-app-beneficiario.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:809610368030:ios:e24024b907aa27ddd44a0f</string>
+</dict>
+</plist>

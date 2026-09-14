@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Assim-Saude",
+    "name": "Assim Saúde",
     "slug": "Assim-Saude",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,10 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Este aplicativo precisa acessar sua localização para fornecer serviços baseados em sua localização atual."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -22,7 +25,7 @@
         "android.permission.ACCESS_FINE_LOCATION"
       ],
       "edgeToEdgeEnabled": true,
-      "package": "com.criacaoonline.AssimSaude"
+      "package": "com.m2br.assim.hml",
     },
     "web": {
       "bundler": "metro",
@@ -32,17 +35,34 @@
     "plugins": [
       "expo-router",
       [
-        "expo-splash-screen",
+        "expo-location",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "locationAlwaysAndWhenInUsePermission": "Permitir o app ASSIM SAÚDE usar sua localização.",
+          "isAndroidBackgroundLocationEnabled": false
         }
-      ]
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          },
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36,
+            "buildToolsVersion": "36.0.0"
+          }
+        }
+      ],
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "b8e74562-7491-4be5-a58f-69eaeeadb0ce"
+      }
     }
   }
 }

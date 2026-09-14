@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "809610368030",
+    "project_id": "assim-app-beneficiario",
+    "storage_bucket": "assim-app-beneficiario.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809610368030:android:8fa5115516c3e38bd44a0f",
+        "android_client_info": {
+          "package_name": "com.m2br.assim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809610368030-ppk1fqplan9qm7tker1d2snlqbalctst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCewiucS-jFium6WBxFdSlP7mW-x2nPZhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809610368030-ppk1fqplan9qm7tker1d2snlqbalctst.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "809610368030-40na2jtaqg89hk52cae8i6gqmutr4240.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.g10web.AssimConceptV1",
+                "app_store_id": "859659237"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

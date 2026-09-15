@@ -1,9 +1,9 @@
-import { View, StyleSheet, BackHandler, ActivityIndicator, Alert } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
-import { useLocalSearchParams, useRouter } from 'expo-router'
-import { WebView } from 'react-native-webview';
-import { useIsFocused } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useIsFocused } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
+import React, { useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, Alert, StyleSheet, View } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export default function AppIndex() {
     const router = useRouter();
@@ -109,7 +109,7 @@ export default function AppIndex() {
                     style={[styles.webview, loading && styles.hiddenWebview]}
                     originWhitelist={['*']}
                     source={{ 
-                      uri: `https://app-homologacao.aws.assim.com.br/`, 
+                      uri: `https://assim-app-teste.aws.assim.com.br/api`, 
                       headers: {
                         'Bearer': `${token}`
                       }

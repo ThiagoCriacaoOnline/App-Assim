@@ -1,9 +1,8 @@
-import { Platform } from 'react-native';
 
 const api = {
   defaults: {
-    baseURL: 'https://app-homologacao.aws.assim.com.br/api',
-    // baseURL: 'https://assim-app-teste.aws.assim.com.br/api',
+    // baseURL: 'https://app-homologacao.aws.assim.com.br/api',
+    baseURL: 'https://assim-app-teste.aws.assim.com.br/api',
     // baseURL: 'http://192.168.1.182:8000/api/v1',
     timeout: 20000,
     headers: {

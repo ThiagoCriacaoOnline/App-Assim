@@ -1,6 +1,6 @@
-import { View, StyleSheet, BackHandler, ActivityIndicator } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
-import { useLocalSearchParams, useRouter } from 'expo-router'
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import React, { useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, BackHandler, StyleSheet, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 export default function RedeEmergencial() {
@@ -97,8 +97,8 @@ export default function RedeEmergencial() {
                     originWhitelist={['*']}
                     source={{ 
                         uri: coordenadas 
-                            ? `https://app-homologacao.aws.assim.com.br/emergencial?lat=${lat}&long=${long}` 
-                            : 'https://app-homologacao.aws.assim.com.br/emergencial' 
+                            ? `https://assim-app-teste.aws.assim.com.br/emergencial?lat=${lat}&long=${long}` 
+                            : 'https://assim-app-teste.aws.assim.com.br/emergencial' 
                     }}
                     onShouldStartLoadWithRequest={handleShouldStartLoadWithRequest}
                     onNavigationStateChange={handleNavigationStateChange}

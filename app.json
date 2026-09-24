@@ -29,7 +29,6 @@
         "android.permission.READ_MEDIA_IMAGES",
         "android.permission.READ_MEDIA_VIDEO"
       ],
-      "edgeToEdgeEnabled": true,
       "package": "com.m2br.assim"
     },
     "web": {
@@ -51,11 +50,6 @@
         {
           "ios": {
             "useFrameworks": "static"
-          },
-          "android": {
-            "compileSdkVersion": 36,
-            "targetSdkVersion": 36,
-            "buildToolsVersion": "36.0.0"
           }
         }
       ],

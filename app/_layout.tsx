@@ -1,9 +1,9 @@
+import * as Location from 'expo-location';
 import { Stack, useSegments } from "expo-router";
 import { useEffect } from "react";
-import { BackHandler} from "react-native";
-import { KeyboardAvoidingView, Platform, StatusBar } from "react-native";
+import { BackHandler, KeyboardAvoidingView, Platform, StatusBar } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import * as Location from 'expo-location';
+
 
 export default function RootLayout() {
   const segments = useSegments();

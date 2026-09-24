@@ -1,4 +1,4 @@
-package com.m2br.assim.hml
+package com.m2br.assim
 
 import android.app.Application
 import android.content.res.Configuration

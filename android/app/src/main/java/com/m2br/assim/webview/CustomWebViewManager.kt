@@ -16,16 +16,6 @@ import com.reactnativecommunity.webview.RNCWebView
 import com.reactnativecommunity.webview.RNCWebViewManager
 import com.reactnativecommunity.webview.RNCWebViewWrapper
 
-/**
- * WebView customizada para contornar a política "Photo and Video Permissions" do
- * Google Play: quando o <input type="file"> pede especificamente imagem/vídeo,
- * chama diretamente o Photo Picker nativo do Android (MediaStore.ACTION_PICK_IMAGES)
- * em vez do chooser genérico (câmera + arquivos) que o react-native-webview usa
- * por padrão em startPhotoPickerIntent().
- *
- * Para qualquer outro tipo de arquivo (accept genérico, PDFs, etc.) o
- * comportamento padrão da lib é mantido (super.onShowFileChooser).
- */
 private const val PHOTO_PICKER_REQUEST_CODE = 51423
 
 @ReactModule(name = CustomWebViewManager.REACT_CLASS)
@@ -35,7 +25,6 @@ class CustomWebViewManager : RNCWebViewManager() {
         const val REACT_CLASS = "RCTCustomWebView"
     }
 
-    // guarda o callback do WebView entre a chamada do Photo Picker e o retorno em onActivityResult
     private var pendingCallback: ValueCallback<Array<Uri>>? = null
 
     inner class CustomWebChromeClient(webView: RNCWebView) : RNCWebChromeClient(webView) {
@@ -49,7 +38,6 @@ class CustomWebViewManager : RNCWebViewManager() {
             val wantsImage = acceptTypes.any { it.startsWith("image/") }
             val wantsVideo = acceptTypes.any { it.startsWith("video/") }
 
-            // só intercepta quando o input pede especificamente imagem e/ou vídeo
             if (wantsImage || wantsVideo) {
                 val activity = (webView.context as? ThemedReactContext)?.currentActivity
                 if (activity != null) {
@@ -71,9 +59,6 @@ class CustomWebViewManager : RNCWebViewManager() {
                         }
                     }
 
-                    // fallback de segurança: se o dispositivo não resolver a intent
-                    // (ex.: OS muito antigo sem o backport do Photo Picker instalado),
-                    // cai no comportamento padrão da lib em vez de travar o upload
                     if (intent.resolveActivity(activity.packageManager) != null) {
                         activity.startActivityForResult(intent, PHOTO_PICKER_REQUEST_CODE)
                         return true
@@ -112,8 +97,9 @@ class CustomWebViewManager : RNCWebViewManager() {
     }
 
     override fun createViewInstance(reactContext: ThemedReactContext): RNCWebViewWrapper {
-        val wrapper = super.createViewInstance(reactContext, RNCWebView(reactContext))
-        wrapper.webView.webChromeClient = CustomWebChromeClient(wrapper.webView as RNCWebView)
+        val rncWebView = RNCWebView(reactContext)
+        val wrapper = super.createViewInstance(reactContext, rncWebView)
+        rncWebView.webChromeClient = CustomWebChromeClient(rncWebView)
         reactContext.addActivityEventListener(activityEventListener)
         return wrapper
     }

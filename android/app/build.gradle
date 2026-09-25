@@ -92,8 +92,8 @@ android {
         applicationId 'com.m2br.assim'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6017
-        versionName "6017"
+        versionCode 7000
+        versionName "7000"
 
         buildConfigField "String", "REACT_NATIVE_RELEASE_LEVEL", "\"${findProperty('reactNativeReleaseLevel') ?: 'stable'}\""
     }

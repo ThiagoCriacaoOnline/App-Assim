@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused, useRouter } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Alert, StyleSheet, View } from 'react-native';
-import { WebView } from 'react-native-webview';
+import CustomWebView from '../Componentes/CustomWebView';
 
 export default function AppIndex() {
     const router = useRouter();
@@ -103,7 +103,7 @@ export default function AppIndex() {
             )}
             
             {showWebView && token && (
-                <WebView
+                <CustomWebView
                     ref={webViewRef}
                     style={[styles.webview, loading && styles.hiddenWebview]}
                     originWhitelist={['*']}

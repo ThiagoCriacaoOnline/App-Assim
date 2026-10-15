@@ -1,12 +1,11 @@
 import * as Location from 'expo-location';
-import { ObserveRoot } from 'expo-observe';
 import { Stack, useSegments } from "expo-router";
 import { useEffect } from "react";
 import { BackHandler, KeyboardAvoidingView, Platform, StatusBar } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 
-function RootLayout() {
+export default function RootLayout() {
   const segments = useSegments();
   const pathname = "/" + segments.join("/"); // monta a rota atual
 
@@ -95,4 +94,3 @@ function RootLayout() {
   );
 }
 
-export default ObserveRoot.wrap(RootLayout);
